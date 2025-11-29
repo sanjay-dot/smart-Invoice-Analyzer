@@ -1,0 +1,19 @@
+<h2 class="dialog-title">Next Month's Top-Selling Product</h2>
+
+<mat-dialog-content class="dialog-content">
+  <div class="product-wrapper">
+    <img src="assets/nehru-jacket.webp" class="product-image" alt="Top Product" />
+    <div class="product-details">
+      <div class="product-name">
+        🧥 <strong>{{ data.product.name }}</strong>
+      </div>
+      <div class="product-sales">
+        📈 Predicted Sales for June 2025: <strong>{{ data.product.sales }}</strong> units
+      </div>
+    </div>
+  </div>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close class="close-btn">Close</button>
+</mat-dialog-actions>

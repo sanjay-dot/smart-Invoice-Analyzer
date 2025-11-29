@@ -1,0 +1,56 @@
+<div
+  class="upload-container"
+  (dragover)="onDragOver($event)"
+  (drop)="onFileDrop($event)"
+  (dragleave)="onDragLeave($event)"
+>
+  <div class="card">
+    <div class="icon">
+      <img src="assets/icons8-folder-48.svg" style="width: 100px;" alt="Folder Icon" />
+    </div>
+    <h2>Upload your Invoice</h2>
+    <a (click)="triggerFileUpload()"><a class="click">Click here</a> to upload</a>
+    <p>Or drag and drop files here (Zip, PDF)</p>
+    <input
+      type="file"
+      #fileInput
+      accept=".zip,.pdf"
+      (change)="onFileSelected($event)"
+      style="display: none;"
+    />
+
+    <!-- Show file name if a file is selected -->
+    <div *ngIf="selectedFile">
+      <p><strong>Selected File:</strong> {{ selectedFile.name }}</p>
+    </div>
+
+    <!-- Buttons -->
+    <div class="submit">
+      <button 
+        class="upload" 
+        [disabled]="!selectedFile || uploadForm.invalid"
+        (click)="onUpload()"
+      >
+        Upload
+      </button>
+      <button 
+        class="remove" 
+        [disabled]="!selectedFile" 
+        (click)="removeFile()"
+      >
+        Remove
+      </button>
+    </div>
+
+      <!-- Progress Bar -->
+  <div *ngIf="uploadProgress >= 0" class="progress-bar">
+    <div
+      class="progress-bar-fill"
+      [style.width.%]="uploadProgress"
+    ></div>
+  </div>
+
+  <!-- Show Percentage -->
+  <p *ngIf="uploadProgress >= 0">Upload Progress: {{ uploadProgress }}%</p>
+  </div>
+</div>

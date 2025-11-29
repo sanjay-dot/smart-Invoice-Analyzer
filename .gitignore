@@ -1,0 +1,52 @@
+# ------------------------
+# Python
+# ------------------------
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.env
+venv/
+.venv/
+ENV/
+env/
+*.db
+
+# Alembic cache
+migrations/versions/__pycache__/
+
+# Uploads (optional)
+uploads/
+
+# ------------------------
+# Jupyter
+# ------------------------
+.ipynb_checkpoints/
+
+# ------------------------
+# Angular / Node
+# ------------------------
+node_modules/
+dist/
+build/
+.angular/
+.vscode/
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+
+# ------------------------
+# OS files
+# ------------------------
+.DS_Store
+Thumbs.db
+
+# ------------------------
+# Environment/Sensitive
+# ------------------------
+*.pem
+*.key
+*.pub
+.env
+.env.*
+secrets.json
